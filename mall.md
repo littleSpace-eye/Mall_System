@@ -26,6 +26,16 @@ my_mall_project/
 ├── requirements.txt       # 依赖包（django, django-redis, djangorestframework-simplejwt等）
 └── .env                   # 敏感信息（数据库密码、秘钥）
 ```
+### git提交规范
+| 类型       | 用法            |
+| -------- | ------------- |
+| feat     | 新功能           |
+| fix      | 修复 bug        |
+| docs     | 文档修改          |
+| style    | 格式/样式/空格，不改逻辑 |
+| refactor | 重构，不新增功能      |
+| test     | 添加/修改测试       |
+| chore    | 其他杂事，如依赖、配置   |
 
 ### CRUD 接口
 Django MVT (Model-View-Template) 模式来实现商品的增删改查（CRUD）
