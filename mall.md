@@ -37,6 +37,19 @@ my_mall_project/
 | test     | 添加/修改测试       |
 | chore    | 其他杂事，如依赖、配置   |
 
-### CRUD 接口
-Django MVT (Model-View-Template) 模式来实现商品的增删改查（CRUD）
+
+### 商城项目系统架构表格（Markdown）
+| 层级 / 模块      | 技术 / 工具                               | 功能说明                                        |
+| ------------ | ------------------------------------- | ------------------------------------------- |
+| **客户端 / 前端** | Web (React / Vue) 或 移动端 App           | 调用后端 API 渲染页面或操作数据                          |
+| **API 接口层**  | Django REST Framework (DRF)           | 提供 RESTful API，处理请求和响应，做权限校验、序列化            |
+| **Web 服务层**  | Gunicorn + Nginx                      | Gunicorn 多进程处理 Django 请求，Nginx 做反向代理、静态文件服务 |
+| **业务逻辑层**    | Django Views / Services / Serializers | 处理商城业务逻辑：商品、购物车、订单、用户管理等                    |
+| **数据库**      | PostgreSQL / MySQL                    | 存储核心数据：用户表、商品表、订单表等；支持索引优化查询                |
+| **缓存**       | Redis / Memcached                     | 缓存热点数据：商品列表、首页推荐、用户 session，减轻数据库压力         |
+| **异步任务**     | Celery + Redis / RabbitMQ             | 异步处理耗时任务：发送邮件、生成订单、库存扣减、消息通知                |
+| **安全**       | Django 内置 + JWT / Token               | CSRF 防护、身份认证、权限控制、防 SQL 注入、XSS 防护           |
+| **监控 & 日志**  | Prometheus + Grafana / Sentry         | 监控系统性能、记录异常、报警                              |
+| **部署 & 运维**  | Docker + Nginx + Gunicorn             | 容器化部署，负载均衡，数据库备份，日志管理                       |
+
     
